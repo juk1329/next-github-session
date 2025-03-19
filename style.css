@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 24px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 16px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-right: none;
+    outline: none;
+}
+
+.search-btn {
+    padding: 6px 16px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.account-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.side-nav {
+    width: 220px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding-top: 8px;
+
+    overflow-y: auto;
+    float: left;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+.side-nav .nav-item .extended-side-nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.side-nav .nav-item:hover .extended-side-nav {
+    background-color: #f2f2f2;
+}
+
+.nav-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 16px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.filter-bar button {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    display: flex;
+    padding: 8px;
+}
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.video-text .video-title {
+    font-weight: bold;
+}
+
+.video-text .video-channel {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media screen and (min-width: 1536px) {
+    .side-nav {
+        display: block;
+    }
+    .extended-items {
+        display: list-item;
+    }
+    .videos-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+    .side-nav {
+        display: block;
+    }
+    .extended-items {
+        display: list-item;
+    }
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .side-nav {
+        display: block;
+    }
+    /* extended-items를 숨김 */
+    .extended-items {
+        display: none;
+    }
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .side-nav {
+        display: block;
+    }
+    .extended-items {
+        display: none;
+    }
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .side-nav {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .videos-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
